@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Brute force dice roll statistics for Dungeons and Dragons 5e"
+    />
+    <meta name="author" content="Landsil" />
+    <title>Dice Stats</title>
+
+    <link href="skin.css" rel="stylesheet" />
+    <script
+      src="https://kit.fontawesome.com/2a2cd0823a.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <script src="skillCheck.js" charset="utf-8" defer></script>
+</head>
+
+<body>
+
+<!-- header section -->
+<header class="centred">
+<div class="forcontent">
+  <h1>Dice Stats</h1>
+  <div class="subheading" role="doc-subtitle">
+    easily visualise your chance of success when rolling dice in D&D
+  </div>
+  <div class="flourish">◇</div>
+</header>
+
+
+<!-- main section -->
+<main class="centred">
+<div class="forcontent">
+
+  <!-- input form -->
+  <form id="parameter-input">
+
+    <fieldset>
+      <legend>
+        <h2>input parameters</h2>
+      </legend>
+
+        <label for="sides">Number of sides<br>
+          <b>20</b>
+        <!-- <input name="sides" placeholder="20"  type="number" min="1" max="20"> -->
+        </label>
+
+        <label for="target">Successful outcome<br>
+          <input name="target" placeholder="10" value="10" type="number" min="1" max="20">
+          </label>
+
+    </fieldset>
+
+    <fieldset>
+      <legend>
+        <h2>optional</h2>
+      </legend>
+
+        <label for="advantage">
+          <input name="advantage" type="checkbox" class="adv" onchange="checkAdvantage(this)">
+          Advantage
+        </label>
+
+        <label for="luck">
+          <input name="luck" type="checkbox" class="adv" onchange="checkAdvantage(this)">
+          Luck
+        </label>
+
+        <label for="elven">
+          <input name="elven" type="checkbox" class="adv" onchange="checkAdvantage(this)">
+          Elven accuracy
+        </label>
+
+        <label for="disadvantage">
+          <input name="disadvantage" type="checkbox" class="dis" onchange="checkAdvantage(this)">
+          Disadvantage
+        </label>
+
+    </fieldset>
+
+<div class="button-area">
+  <button type="submit" class="pushable" onclick="return populateTable()">
+    <span role="presentation" class="shadow"></span>
+    <span role="presentation" class="edge"></span>
+    <span class="frontbtn"> Roll 1 million times! </span>
+  </button>
+</div>
+  </form>
+
+  <!-- results -->
+  <div class="flourish">&nbsp;</div>
+  <h2>Results:</h2>
+
+  <p id="overview"></p>
+
+  <table class="present-results">
+    <thead>
+    <tr>
+      <th>&nbsp;</th>
+      <th>count</th>
+      <th>probability of result</th>
+      <th>result or higher</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td class="table-number">1</td>
+      <td class="count face1"></td>
+      <td class="probability face1"></td>
+      <td class="higher face1"></td>
+    </tr>
+    <tr>
+      <td class="table-number">2</td>
+      <td class="count face2"></td>
+      <td class="probability face2"></td>
+      <td class="higher face2"></td>
+    </tr>
+    <tr>
+      <td class="table-number">3</td>
+      <td class="count face3"></td>
+      <td class="probability face3"></td>
+      <td class="higher face3"></td>
+    </tr>
+    <tr>
+      <td class="table-number">4</td>
+      <td class="count face4"></td>
+      <td class="probability face4"></td>
+      <td class="higher face4"></td>
+    </tr>
+    <tr>
+      <td class="table-number">5</td>
+      <td class="count face5"></td>
+      <td class="probability face5"></td>
+      <td class="higher face5"></td>
+    </tr>
+    <tr>
+      <td class="table-number">6</td>
+      <td class="count face6"></td>
+      <td class="probability face6"></td>
+      <td class="higher face6"></td>
+    </tr>
+    <tr>
+      <td class="table-number">7</td>
+      <td class="count face7"></td>
+      <td class="probability face7"></td>
+      <td class="higher face7"></td>
+    </tr>
+    <tr>
+      <td class="table-number">8</td>
+      <td class="count face8"></td>
+      <td class="probability face8"></td>
+      <td class="higher face8"></td>
+    </tr>
+    <tr>
+      <td class="table-number">9</td>
+      <td class="count face9"></td>
+      <td class="probability face9"></td>
+      <td class="higher face9"></td>
+    </tr>
+    <tr>
+      <td class="table-number">10</td>
+      <td class="count face10"></td>
+      <td class="probability face10"></td>
+      <td class="higher face10"></td>
+    </tr>
+    <tr>
+      <td class="table-number">11</td>
+      <td class="count face11"></td>
+      <td class="probability face11"></td>
+      <td class="higher face11"></td>
+    </tr>
+    <tr>
+      <td class="table-number">12</td>
+      <td class="count face12"></td>
+      <td class="probability face12"></td>
+      <td class="higher face12"></td>
+    </tr>
+    <tr>
+      <td class="table-number">13</td>
+      <td class="count face13"></td>
+      <td class="probability face13"></td>
+      <td class="higher face13"></td>
+    </tr>
+    <tr>
+      <td class="table-number">14</td>
+      <td class="count face14"></td>
+      <td class="probability face14"></td>
+      <td class="higher face14"></td>
+    </tr>
+    <tr>
+      <td class="table-number">15</td>
+      <td class="count face15"></td>
+      <td class="probability face15"></td>
+      <td class="higher face15"></td>
+    </tr>
+    <tr>
+      <td class="table-number">16</td>
+      <td class="count face16"></td>
+      <td class="probability face16"></td>
+      <td class="higher face16"></td>
+    </tr>
+    <tr>
+      <td class="table-number">17</td>
+      <td class="count face17"></td>
+      <td class="probability face17"></td>
+      <td class="higher face17"></td>
+    </tr>
+    <tr>
+      <td class="table-number">18</td>
+      <td class="count face18"></td>
+      <td class="probability face18"></td>
+      <td class="higher face18"></td>
+    </tr>
+    <tr>
+      <td class="table-number">19</td>
+      <td class="count face19"></td>
+      <td class="probability face19"></td>
+      <td class="higher face19"></td>
+    </tr>
+    <tr>
+      <td class="table-number">20</td>
+      <td class="count face20"></td>
+      <td class="probability face20"></td>
+      <td class="higher face20"></td>
+    </tr>
+    <tbody>
+  </table>
+
+</div>
+</main>
+
+<!-- footer section -->
+<footer class="centred">
+
+      <div class="flourish">◇</div>
+      <div class="forcontent">
+      <div>Created by <a href="https://mb-malta.co.uk/mateusz/">Landsil</a><br>
+      See <a href="https://github.com/Landsil/apps_script--rollDice">original spreadsheet version</a>
+    
+    </div>
+    <div>
+      <!-- <a href="https://mb-malta.co.uk"><i class="fa-solid fa-envelope icon"></i></a> -->
+      <a href="https://github.com/Landsil"><i class="fa-brands fa-github icon"></i></a>
+    </div>
+
+  </div>
+</footer>
+</body>
+</html>
