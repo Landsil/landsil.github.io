@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
       content="Brute force dice roll statistics for Dungeons and Dragons 5e"
@@ -22,25 +23,25 @@
 
 <!-- header section -->
 <header class="centred">
-<div class="forcontent">
+<div class="forcontent" role="presentation">
   <h1>Dice Stats</h1>
   <div class="subheading" role="doc-subtitle">
     easily visualise your chance of success when rolling dice in D&D
   </div>
-  <div class="flourish">◇</div>
+  <div class="flourish" role="separator">◇</div>
 </header>
 
 
 <!-- main section -->
 <main class="centred">
-<div class="forcontent">
+<div class="forcontent" role="presentation">
 
   <!-- input form -->
   <form id="parameter-input">
 
     <fieldset>
       <legend>
-        <h2>input parameters</h2>
+        <h2>skill check</h2>
       </legend>
 
         <label for="sides">Number of sides<br>
@@ -48,7 +49,7 @@
         <!-- <input name="sides" placeholder="20"  type="number" min="1" max="20"> -->
         </label>
 
-        <label for="target">Successful outcome<br>
+        <label for="target">DC<br>
           <input name="target" placeholder="10" value="10" type="number" min="1" max="20">
           </label>
 
@@ -81,28 +82,29 @@
 
     </fieldset>
 
-<div class="button-area">
+<div class="button-area" role="presentation">
   <button type="submit" class="pushable" onclick="return populateTable()">
     <span role="presentation" class="shadow"></span>
     <span role="presentation" class="edge"></span>
-    <span class="frontbtn"> Roll 1 million times! </span>
+    <span class="frontbtn"  role="button"> Roll 1 million times! </span>
   </button>
 </div>
   </form>
 
   <!-- results -->
-  <div class="flourish">&nbsp;</div>
-  <h2>Results:</h2>
+  <div class="flourish" role="separator">&nbsp;</div>
 
-  <p id="overview"></p>
+
+  <!-- <p id="overview"></p> -->
 
   <table class="present-results">
+    <caption><h2>Results:</h2></caption>
     <thead>
     <tr>
       <th>&nbsp;</th>
       <th>count</th>
-      <th>probability of result</th>
-      <th>result or higher</th>
+      <th>probability</th>
+      <th>or more</th>
     </tr>
     </thead>
     <tbody>
@@ -235,15 +237,15 @@
 <!-- footer section -->
 <footer class="centred">
 
-      <div class="flourish">◇</div>
-      <div class="forcontent">
-      <div>Created by <a href="https://mb-malta.co.uk/mateusz/">Landsil</a><br>
+      <div class="flourish" role="separator">◇</div>
+      <div class="forcontent" role="presentation">
+      <div role="presentation">Created by <a href="https://mb-malta.co.uk/mateusz/">Landsil</a><br>
       See <a href="https://github.com/Landsil/apps_script--rollDice">original spreadsheet version</a>
-    
+
     </div>
-    <div>
+    <div role="presentation">
       <!-- <a href="https://mb-malta.co.uk"><i class="fa-solid fa-envelope icon"></i></a> -->
-      <a href="https://github.com/Landsil"><i class="fa-brands fa-github icon"></i></a>
+      <a href="https://github.com/Landsil" aria-label="Github page"><i class="fa-brands fa-github icon"></i></a>
     </div>
 
   </div>
