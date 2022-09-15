@@ -15,29 +15,23 @@ function checkAdvantage(element) {
   }
 
   //ticking elven ticks advantage as well
-  if (element.id === "elven"){
-    document.querySelector("#advantage").checked = true
-  } 
-  
-  //unticking advantage unticks elven
-  if (document.querySelector("#advantage").checked === false) {
-    document.querySelector("#elven").checked = false
+  if (element.id === "elven") {
+    document.querySelector("#advantage").checked = true;
   }
 
-  console.log("clicked: " + element.id + ", advantage: " + document.querySelector("#advantage").checked + ", elven: " + document.querySelector("#elven").checked)
+  //unticking advantage unticks elven
+  if (document.querySelector("#advantage").checked === false) {
+    document.querySelector("#elven").checked = false;
+  }
 
+  // console.log("clicked: " + element.id + ", advantage: " + document.querySelector("#advantage").checked + ", elven: " + document.querySelector("#elven").checked)
 }
 
 const diceForm = document.getElementById("parameter-input");
-// const overview = document.getElementById("overview");
 
 function populateTable() {
-  // let formSummary = `sides:  <b>20</b>, target:  <b>${diceForm.target.value}</b>, advantage:  <b>${diceForm.advantage.checked}</b>, luck:  <b>${diceForm.luck.checked}</b>, elven accuracy:  <b>${diceForm.elven.checked}</b>, disadvantage:  <b>${diceForm.disadvantage.checked}</b>.`;
-
-  // overview.innerHTML = formSummary;
-
   webSkillCheck(
-    diceForm.target.value,
+    diceForm.dc.value,
     diceForm.advantage.checked,
     diceForm.luck.checked,
     diceForm.elven.checked,
@@ -55,10 +49,10 @@ It provides an extensive log of the results.
 function webSkillCheck(skillTarget, advantage, luck, elven, disadvantage) {
   const sides = 20;
 
-  let adv_b = advantage
-  let luck_b = luck
-  let eAcc_b = elven
-  let dis_b = disadvantage
+  let adv_b = advantage;
+  let luck_b = luck;
+  let eAcc_b = elven;
+  let dis_b = disadvantage;
 
   let orMore = 1;
   let sum = 0;
@@ -118,15 +112,18 @@ function webSkillCheck(skillTarget, advantage, luck, elven, disadvantage) {
   // populate the table
   for (let r = 1; r < 21; r++) {
     sum = sum + r * results[r];
-    
+
     document.querySelector(".count.face" + r).innerText = results[r];
     orMore = orMore - results[r - 1] / max;
     document.querySelector(".probability.face" + r).innerText =
-    document.querySelector(".higher.face" + r).innerText = (100 * orMore).toFixed(2) + "%";
+      document.querySelector(".higher.face" + r).innerText =
+        (100 * orMore).toFixed(2) + "%";
   }
 
   //highlight target row
-  document.querySelector("tr:nth-child(" + skillTarget + ")").classList.add("highlighted");
+  document
+    .querySelector("tr:nth-child(" + skillTarget + ")")
+    .classList.add("highlighted");
 
   average = sum / max;
 }
