@@ -17,10 +17,9 @@ Set of basic scripts for pulling useful data from Google Workspace.
 
 ![GitHub stars](https://img.shields.io/github/stars/Landsil/apps_script--GoogleWorkspace-API?style=social)
 
-##### [Have I Been PWNED - Offline checker](https://github.com/Landsil/haveibeenpwned-password-check)
-
-![GitHub stars](https://img.shields.io/github/stars/landsil/haveibeenpwned-password-check?style=social)
-<img src="images/HIBP_24-11-2019.png?raw=true"/>
+##### [DiceStats](https://mb-malta.co.uk/DiceStats/)
+Welcome to lovely nightmare of using computing power to figure out probability without "math"
+Inspired by this [video by Stand-up Maths](https://www.youtube.com/watch?v=X_DdGRjtwAo)
 
 ---
 
