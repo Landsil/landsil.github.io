@@ -10,6 +10,13 @@ Please consider this page a learning and showcase project. It will link to some 
 
 #### Github Projects
 
+---
+
+##### [apps_script--GoogleWorkspace-API](https://github.com/Landsil/apps_script--GoogleWorkspace-API)
+Set of basic scripts for pulling useful data from Google Workspace.
+
+![GitHub stars](https://img.shields.io/github/stars/Landsil/apps_script--GoogleWorkspace-API?style=social)
+
 ##### [Have I Been PWNED - Offline checker](https://github.com/Landsil/haveibeenpwned-password-check)
 
 ![GitHub stars](https://img.shields.io/github/stars/landsil/haveibeenpwned-password-check?style=social)
@@ -22,12 +29,6 @@ This set of scripts lets you update your users' data from a spreadsheet.
 
 ![GitHub stars](https://img.shields.io/github/stars/Landsil/apps_script--GoogleWorkspace_UserManager?style=social)
 
----
-
-##### [apps_script--GoogleWorkspace-API](https://github.com/Landsil/apps_script--GoogleWorkspace-API)
-Set of basic scripts for pulling useful data from Google Workspace.
-
-![GitHub stars](https://img.shields.io/github/stars/Landsil/apps_script--GoogleWorkspace-API?style=social)
 
 ---
 
@@ -48,16 +49,14 @@ Python 3.* script to create Google calendar events for `Anniversaries` and `Birt
 
 #### Other fun things I do
 
-- [Unsplash](https://unsplash.com/@landsil) - free "stock" photos.
-
-- [Podcast](https://anchor.fm/complainer-daily) - a fun project to test commitment, learn writing scripts and recording.
-  - [Show notes](https://www.notion.so/Complainer-Daily-149632a0af2f4a4f84524eb5dc2d5dc9) - on Notion pages
+- [Pixelded]([https://unsplash.com/@landsil](https://pixelfed.social/Landsil)) - My Photos on Activitypub service
 
 
 ---
 
 ##### You can find me at:
 - **[LinkedIn](https://www.linkedin.com/in/mateuszbijakowski)** - I won't reply to anything most likely.
+- **[Mastodon](https://infosec.exchange/deck/@landsil)** - Main social.
 - **[GitHub](https://github.com/Landsil)** - For all of my projects I didn't bother to add here.
 - **[Keybase](https://keybase.io/landsil)** - Because I like them
 
