@@ -49,7 +49,7 @@ Python 3.* script to create Google calendar events for `Anniversaries` and `Birt
 
 #### Other fun things I do
 
-- [Pixelded]([https://unsplash.com/@landsil](https://pixelfed.social/Landsil)) - My Photos on Activitypub service
+- [Pixelded](https://pixelfed.social/Landsil) - My Photos on Activitypub service
 
 
 ---
